@@ -44,6 +44,8 @@ cd Linux-Commands
 ```
 
 
+
+
 ![Alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEfyLHeZtHJ19qeRv2ac_QSYngEx32h-U7g&s)
 
 # Εντολές Linux
@@ -54,7 +56,7 @@ cd Linux-Commands
 ## Πληροφορίες μαθήματος
 - **Μάθημα**: Λειτουργικά Συστήματα 1
 - **Εξάμηνο**: 3
-- **Πρόγραμμα**: [UNIWA](https://www.uniwa.gr/)
+- **Πρόγραμμα**: [ΠΑΔΑ](https://www.uniwa.gr/)
 - **Τμήμα**: [Μηχανικών Πληροφορικής και Υπολογιστών](https://ice.uniwa.gr/)
 - **Διδάσκων εργαστηρίου**: Πεντάρης Γεώργιος
 
