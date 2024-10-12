@@ -3,7 +3,7 @@
 # Linux Commands
 
 For the requested Assignment, click the link:
-[Assignment](Assignment/EN_OS1_Lab_Ask-1-2021-22.pdf)
+[Assignment](Assignment/#EN_OS1_Lab_Ask-1-2021-22.pdf)
 
 For the detailed Documentation, click the link:
 [Documentation](Documentation/#EN_19390005.G9.EX1.txt)
@@ -14,6 +14,7 @@ For the detailed Documentation, click the link:
 - **Program Study**: [UNIWA](https://www.uniwa.gr/)
 - **Department**: [Informatics and Computer Engineering](https://ice.uniwa.gr/)
 - **Lab Instructor**: Pentaris Georgios
+- **Academic Season**: 2021-2022
 
 ## Student Information
 - **Name**: Athanasiou Vasileios Evangelos
@@ -62,6 +63,7 @@ cd Linux-Commands
 - **Πρόγραμμα**: [ΠΑΔΑ](https://www.uniwa.gr/)
 - **Τμήμα**: [Μηχανικών Πληροφορικής και Υπολογιστών](https://ice.uniwa.gr/)
 - **Διδάσκων εργαστηρίου**: Πεντάρης Γεώργιος
+- **Ακαδημαική Χρονιά**: 2021-2022
 
 ## Στοιχεία φοιτητή
 - **Όνομα**: Αθανασίου Βασίλειος Ευάγγελος
