@@ -4,6 +4,7 @@
 
 For the requested Assignment, click the link:
 [Assignment](Assignment/EN_OS1_Lab_Ask-1-2021-22.pdf)
+
 For the detailed Documentation, click the link:
 [Documentation](Documentation/#EN_19390005.G9.EX1.txt)
 
@@ -45,12 +46,13 @@ git clone https://github.com/Operating-Systems-1/Linux-Commands.git
 cd Linux-Commands
 ```
 
-![Alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEfyLHeZtHJ19qeRv2ac_QSYngEx32h-U7g&s)
+![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/255px-Flag_of_Greece.svg.png)
 
 # Εντολές Linux
 
 Για την ζητούμενη Εργασία, κάντε κλικ στο σύνδεσμο:
 [Εργασία](Assignment/#GR_OS1_Lab_Ask-1-2021-22.pdf)
+
 Για τη λεπτομερή Τεκμηρίωση, κάντε κλικ στο σύνδεσμο:
 [Τεκμηρίωση](Documentation/#GR_19390005.G9.EX1.txt)
 
