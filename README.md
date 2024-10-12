@@ -44,7 +44,6 @@ This hands-on assignment aims to build a solid foundation in Linux command usage
 ### 1. Clone the Repository
 ```
 git clone https://github.com/Operating-Systems-1/Linux-Commands.git
-cd Linux-Commands
 ```
 
 ![Alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/255px-Flag_of_Greece.svg.png)
@@ -93,5 +92,4 @@ cd Linux-Commands
 ### 1. Κλωνοποιήστε το αποθετήριο
 ```
 git clone https://github.com/Operating-Systems-1/Linux-Commands.git
-cd Linux-Commands
 ```
