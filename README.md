@@ -9,7 +9,7 @@ For the detailed Documentation, click the link:
 [Documentation](Documentation/#EN_19390005.G9.EX1.txt)
 
 ## Course Information
-- **Course**: Operating Systems 1
+- **Course**: [Operating Systems 1](https://ice.uniwa.gr/education/undergraduate/courses/operating-systems-i/)
 - **Semester**: 3
 - **Program Study**: [UNIWA](https://www.uniwa.gr/)
 - **Department**: [Informatics and Computer Engineering](https://ice.uniwa.gr/)
@@ -57,7 +57,7 @@ cd Linux-Commands
 [Τεκμηρίωση](Documentation/#GR_19390005.G9.EX1.txt)
 
 ## Πληροφορίες μαθήματος
-- **Μάθημα**: Λειτουργικά Συστήματα 1
+- **Μάθημα**: [Λειτουργικά Συστήματα 1](https://ice.uniwa.gr/education/undergraduate/courses/operating-systems-i/)
 - **Εξάμηνο**: 3
 - **Πρόγραμμα**: [ΠΑΔΑ](https://www.uniwa.gr/)
 - **Τμήμα**: [Μηχανικών Πληροφορικής και Υπολογιστών](https://ice.uniwa.gr/)
