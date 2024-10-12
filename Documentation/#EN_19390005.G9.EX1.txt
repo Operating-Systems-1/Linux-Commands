@@ -1,0 +1,931 @@
+# 
+# Laboratory OS 1 / Exercise 1 / 2021-2022 
+# Name : Athanasiou Vasileios Evangelos 
+# Student ID : 19390005 
+#
+-------------------------------------------------------------------------------------------------------------------------------------------------- 
+# Question 1. 
+# Create in the current directory the file "ask1.txt" with the following contents (first name, surname, username, zip code, region, tel.) 
+# and then display it on the screen, with its lines numbered. 
+# George Pappas george2 12136 Peristeri ------- 
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555 
+# George Georgioy george583 11132 Athens ------- 
+# Helen Georgioy helen3 12136 Peristeri 5748456 
+# Nick Pappas nick4 11223 Aigaleo 5324123 
+# Helen Ioannoy helen367 13222 Athens ------- 
+# Helen Thanoy helen36 11132 Peristeri 9718345 
+# Vasilis Mamalis vas32 12345 Dafni 9738383 
+# 
+# Answer : First, we will use the "cd" command to navigate to the "Documents" directory and use the "mkdir" command to create the directory
+# "Project1" directory, where the file "ask1.txt" is to be created. By typing the command "cd ../..." go to 
+# to the parent directory of "Documents" which is the "Home" directory.
+
+cd Documents
+mkdir Project1
+cd ../...
+
+# Next, we will use the command "cat > ./Documents/Project1/<file_name>" to create the file named 
+# "ask1.txt" in the directory named "Project1" by typing the contents given by the question's utterance. Finally, in order to display the
+# to display the contents of the file "ask1.txt" on the screen with its numbered lines, we will use the command "cat -n".
+#
+# Result of executing the last command:
+# 
+# 1 George Pappas george2 12136 Peristeri -------
+# 2 Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# 3 George Georgioy george583 11132 Athens -------
+# 4 Helen Georgioy helen3 12136 Peristeri 5748456
+# 5 Nick Pappas nick4 11223 Aigaleo 5324123
+# 6 Helen Ioannoy helen367 13222 Athens -------
+# 7 Helen Thanoy helen36 11132 Peristeri 9718345
+# 8 Vasilis Mamalis vas32 12345 Dafni 9738383
+
+cat > ./Documents/Project1/ask1.txt
+George Pappas george2 12136 Peristeri -------
+Nick Nikolaoy nick23 12232 Aigaleo 5314555
+George Georgioy george583 11132 Athens -------
+Helen Georgioy helen3 12136 Peristeri 5748456
+Nick Pappas nick4 11223 Aigaleo 5324123
+Helen Ioannoy helen367 13222 Athens -------
+Helen Thanoy helen36 11132 Peristeri 9718345
+Vasilis Mamalis vas32 12345 Dafni 9738383
+cat -n ./Documents/Project1/ask1.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 2.
+# Run the command "cal -3 > calfile.txt" and explain what it does.
+#
+# Answer : The command "cal -3" shows the calendar of three months of the current year. The calendar of the month in which the command is executed is displayed. 
+# command, the month before and the month after. The day on which the command is executed is also highlighted. In our example, the command is filled
+# command was executed on '14 December 2021', so it displays the calendar for November '2021', December '2021' and January '2021'. 
+# "2022". The command "cal -3 > calfile.txt" creates an archive, if none exists, named "calfile.txt" and transfers the 
+# result of the command "cal -3" as the contents of this file. Indeed, if we display the contents of the file "calfile.txt" with 
+# the command "cat calfile.txt", we will notice that it is the result of the "cal -3" command. The current procedure is done in the cat.
+# "Project1" with the path "./Documents/Project1/calfile.txt".
+# 
+# Result of the execution of the last command:
+#
+# November 2021 December 2021 January 2022 
+# Sun De Tr Tr Te Te Peh Peh Pa Sa Sun De Tr Te Te Peh Pa Sa Sun De Tr Tr Te Te Peh Pa Sa Sun De Tr Te Peh Pa Sa 
+# 1 2 3 4 5 6 1 2 3 4 1 
+# 7 8 9 10 11 12 13 5 6 7 8 9 10 11 2 3 4 5 6 7 8 
+# 14 15 16 17 18 19 20 12 13 14 15 16 17 18 9 10 11 12 13 14 15 
+# 21 22 23 24 25 26 27 19 20 21 22 23 24 25 16 17 18 19 20 21 22 
+# 28 29 30 26 27 28 29 30 31 23 24 25 26 27 28 29 
+# 30 31
+
+cal -3 > ./Documents/Project1/calfile.txt
+cat ./Documents/Project1/calfile.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 3.
+# Merge the files "calfile.txt" and "ask1.txt" into one file named "full.txt".
+# 
+# Answer : We will use the command "cat ask1.txt calfile.txt > full.txt". The file "full.txt" is automatically created with the e-call.
+# command. Then, we will use the command "cat full.txt" to display the contents of the file "full.txt", where we observe that the file "full.txt" is full.
+# that the contents of "full.txt" are the contents of "ask1.txt" and "calfile.txt" together. The current procedure is 
+# in the directory "Project1" with "Documents" as parent directory, so we will go to that directory first.
+#
+# Result of executing the last command:
+#
+# George Pappas george2 12136 Peristeri -------
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# George Georgioy george583 11132 Athens -------
+# Helen Georgioy helen3 12136 Peristeri 5748456
+# Nick Pappas nick4 11223 Aigaleo 5324123
+# Helen Ioannoy helen367 13222 Athens -------
+# Helen Thanoy helen36 11132 Peristeri 9718345
+# Vasilis Mamalis vas32 12345 Dafni 9738383
+# November 2021 December 2021 January 2022 
+# Sun De Tr Tr Te Te Pe Pe Pa Pa Sa Sun De Tr Te Te Pe Pa Pa Sa Sun De Tr Te Te Pe Pa Pa Sa 
+# 1 2 3 4 5 6 1 2 3 4 1 
+# 7 8 9 10 11 12 13 5 6 7 8 9 10 11 2 3 4 5 6 7 8 
+# 14 15 16 17 18 19 20 12 13 14 15 16 17 18 9 10 11 12 13 14 15 
+# 21 22 23 24 25 26 27 19 20 21 22 23 24 25 16 17 18 19 20 21 22 
+# 28 29 30 26 27 28 29 30 31 23 24 25 26 27 28 29 
+# 30 31
+
+cd ./Documents/Project1
+cat ask1.txt calfile.txt > full.txt
+cat full.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 4.
+# Display the five most recently modified files in your directory. 
+#
+# Answer : We will use the "ls" command, which displays the files in the current directory (./Documents/Project1). 
+# With the "-alt" parameter we display all hidden (files whose name starts with a dot ".") and non-hidden (-a) files, with the properties 
+# their properties (-l) and with the time they were recently modified.
+#
+# Result of running the command :
+#
+# total 36
+# drwxr-xr-x 18 ice19390005 ice19390005 4096 Dec 16 21:12 ..
+# drwxr-xr-x 2 ice19390005 ice19390005 4096 Dec 16 21:09 .
+# -rw-rw-r-- 1 ice19390005 ice19390005 964 Dec 16 16:37 full.txt
+# -rw-rw-r-- 1 ice19390005 ice19390005 611 Dec 16 16:36 calfile.txt
+# -rw-rw-r-- 1 ice19390005 ice19390005 353 Dec 16 16:11 ask1.txt
+# -rw-r---r-- 1 ice19390005 ice19390005 12288 Dec 14 02:20 .ask1.txt.swp
+# -rw-rw-r-- 1 ice19390005 ice19390005 81 Dec 8 16:35 .~lock.ask1.txt#
+#
+# The above files are sorted by modification time in descending order from top to bottom. Therefore the five 
+# most recently modified files are the files named ".." , ".", "full.txt", "calfile.txt" and "ask1.txt".
+
+ls -alt ./Documents/Project1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 5.
+# Create a directory named "mydir1". Go to it and then copy there (without changing the directory) the a-
+# archive "full.txt" (from the parent directory). Then rename it to "new.txt". Return to the parent directory. Delete the main directory.
+# directory "mydir1" and its contents.
+#
+# Answer : Initially, to create the directory "mydir1" we will use the command "mkdir" in the directory "./Documents/Project1". 
+# We then go from the parent directory "./Documents/Project1" to "mydir1" using the "cd" command. Then, staying in the directory
+# mydir1", copy the file "full.txt" located in the parent directory "Project1" with the command "cp ../full.txt copyfull.txt". 
+# The file "copyfull.txt" is automatically created by the command and has the contents of the file "full.txt". Then we rename the 
+# new file "copyfull.txt" to "new.txt" with the command "mv copyfull.txt new.txt". We then return to the parent directory "Project1" with the command
+# command "cd ..". From there we delete the directory "mydir1" with the command "rm" and with the parameter "-rf" we also delete its contents.
+
+mkdir ./Documents/Project1/mydir1
+cd ./Documents/Project1/mydir1
+cp ../full.txt copyfull.txt
+mv copyfull.txt new.txt
+cd ..
+rm -rf mydir1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 6.
+# Give the commands that will display: (a) all files in the directory "/usr" with information about their "inode" and their size in 
+# "blocks"; (b) all contents of the directory and subdirectory tree (recursively) under the directory "/usr", with 
+# complete information about each of them, and displayed incrementally, page by page.
+#
+# Answer : (a) We will use the command "ls" with parameter "-alis" and path "/usr". More specifically, we display all the files
+# of the directory "/usr" hidden and not (-a), with their properties (-l), with their "inodes" (-i) and with their size in "blocks" (-s). 
+# (b) First, we will use the command "ls" with parameter "-Ralis" and path "/usr". More specifically, we display all (-a) the contents of the (-a)
+# contents of the directory and subdirectory tree under the "/usr" directory (-R), with their properties (-l), with "inodes" 
+# (-i) and with their size in "blocks" (-s). Piping (|) with the "more" command (where it displays the contents in increments of one by one), the contents of the "blocks" (-i) and the "blocks" (-s).
+# thones) we reach the desired result requested by the subquestion's statement.
+#
+# Result of the execution of the command :
+# 
+# (a) total 116
+# 131078 4 drwxr-xr-x 14 root root 4096 Aug 19 13:32 .
+# 2 4 4 drwxr-xr-x 20 root root 4096 Dec 1 23:04 ..
+# 131094 40 drwxr-xr-x 2 root root 40960 Dec 16 12:33 bin
+# 131095 4 4 drwxr-xr-x 2 root root 4096 Aug 19 13:35 games
+# 131096 4 drwxr-xr-x 10 root root 4096 Dec 1 23:08 include
+# 131097 4 drwxr-xr-x 117 root root root 4096 Dec 1 23:17 lib
+# 131098 4 drwxr-xr-x 2 root root 4096 Aug 19 13:29 lib32
+# 131099 4 drwxr-xr-x 2 root root 4096 Aug 19 13:30 lib64
+# 131100 4 drwxr-xr-x 12 root root 4096 Dec 1 23:09 libexec
+# 131101 4 drwxr-xr-x 2 root root 4096 Aug 19 13:29 libx32
+# 131102 4 drwxr-xr-x 10 root root 4096 Aug 19 13:29 local
+# 131103 20 drwxr-xr-x 2 root root 20480 Dec 13 23:14 sbin
+# 131104 12 drwxr-xr-x 250 root root 12288 Dec 1 23:17 share
+# 131105 4 drwxr-xr-x 6 root root 4096 Dec 1 23:19 src
+#
+# The first column is the "inodes" of the files and the second column is the size in "blocks".
+#
+# (b) /usr:
+# total 116
+# 131078 4 drwxr-xr-x 14 root root 4096 Aug 19 13:32 .
+# 2 4 4 drwxr-xr-x 20 root root 4096 Dec 1 23:04 ..
+# 131094 40 drwxr-xr-x 2 root root 40960 Dec 16 12:33 bin
+# 131095 4 4 drwxr-xr-x 2 root root 4096 Aug 19 13:35 games
+# 131096 4 drwxr-xr-x 10 root root 4096 Dec 1 23:08 include
+# 131097 4 drwxr-xr-x 117 root root root 4096 Dec 1 23:17 lib
+# 131098 4 drwxr-xr-x 2 root root 4096 Aug 19 13:29 lib32
+# 131099 4 drwxr-xr-x 2 root root 4096 Aug 19 13:30 lib64
+# 131100 4 drwxr-xr-x 12 root root 4096 Dec 1 23:09 libexec
+# 131101 4 drwxr-xr-x 2 root root 4096 Aug 19 13:29 libx32
+# 131102 4 drwxr-xr-x 10 root root 4096 Aug 19 13:29 local
+# 131103 20 drwxr-xr-x 2 root root 20480 Dec 13 23:14 sbin
+# 131104 12 drwxr-xr-x 250 root root 12288 Dec 1 23:17 share
+# 131105 4 drwxr-xr-x 6 root root 4096 Dec 1 23:19 src
+#
+# /usr/bin:
+# total 166340
+# 131094 40 drwxr-xr-x 2 root root 40960 Dec 16 12:33 .
+# 131078 4 drwxr-xr-x 14 root root 4096 Aug 19 13:32 ...
+# 131114 60 -rwxr-xr-x 1 root root 59736 Sep 5 2019 [
+# 131115 32 -rwxr-xr-x 1 root root 31248 May 19 2020 aa-enabled
+# 131116 36 -rwxr-xr-x 1 root root 35344 May 19 2020 aa-exec
+# 131117 24 -rwxr-xr-x 1 root root 22912 Apr 14 2021 aconnect
+# 131118 20 -rwxr-xr-x 1 root root 19016 Nov 28 2019 acpi_listen
+# 131119 8 -rwxr-xr-x 1 root root 7415 Apr 30 2021 add-apt-reposito
+# ry
+# --More-- (pressing "Enter" will display the following contents)
+#
+# In the first column are the "inodes" of the files and in the second the size in "blocks".
+
+(a) ls -alis /usr
+(b) ls -Ralis /usr 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 7.
+# Create a directory named "testdir1". Go to it and create a hard link (named "ask1link") to the
+# file "ask1.txt" of the parent directory. Make sure (by giving the appropriate command and explaining what you see) that it has been created 
+# and that it is not a "symbolic (soft) link".
+#
+# Answer : First, we will use the "mkdir" command to create the directory named "testdir1" in the parent directory 
+# "./Documents/Project1". We move the file "ask1.txt" from the parent directory "Project1" to the directory "testdir1" with the command "mv
+# ask1.txt ./testdir1". With the command "cd" we go to the directory "testdir1" and create a "hard link" named "ask1link" with 
+# the command "ln". To make sure that it is created and that it is not a "symbolic link" we also create a "soft link" to 
+# file "ask1.txt" with the command "ln" and parameter "-s" with the name "softask1.txt". To see in detail with the "inodes" the files that 
+# included in the directory "tesdir1" we use the command "ls" with parameters "-li" to display the properties (-l) and 
+# "inodes" of the files (-i). 
+#
+# Result of executing the last command : 
+# 
+# total 8
+# 16040 -rw-rw-r-- 2 ice19390005 ice19390005 353 Dec 16 16:11 ask1link
+# 16040 -rw-rw-r-- 2 ice19390005 ice19390005 353 Dec 16 16:11 ask1.txt
+# 17438 lrwxrwxrwx 1 ice19390005 ice19390005 8 Dec 17 01:17 softask1.txt -> ask1.txt
+#
+# Notice that the files "ask1.txt" and "ask1link" have the same "inode" (1st column 16040). Also, in the 3rd column we notice that 
+# both files have "2" links which means that in order to completely delete the file with the contents from the operating system
+# system, both the "ask1.txt" file and the "ask1link" file must be deleted. In general, they have exactly the same properties. This confirms 
+# that a "link" of "ask1.txt" was indeed created. In the 3rd line we see that the file "softask1.txt -> ask1.txt" has been created 
+# with a different "inode" than the other two files (1st column 17438) and with a link (3rd column 1) and with "->" indicates another path
+# to the file "ask1.txt". This action proves that a "hard link" of "ask1.txt" was indeed created. Another informative 
+# difference is that if we delete the file "ask1.txt" with the command "rm ask1.txt" we will notice these differences in the contents of the file.
+# contents of "ask1link" and "softask1.txt" with the commands (a) "cat ask1link" and (b) "cat softask1.txt" respectively.
+
+mkdir ./Documents/Project1/testdir1
+cd ./Documents/Project1
+mv ask1.txt ./testdir1
+cd testdir1
+ln ask1.txt ask1link
+ln -s ask1.txt softask1.txt
+ls -li
+
+# Result of execution of the last command : 
+# 
+# (a) George Pappas george2 12136 Peristeri -------
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# George Georgioy george583 11132 Athens -------
+# Helen Georgioy helen3 12136 Peristeri 5748456
+# Nick Pappas nick4 11223 Aigaleo 5324123
+# Helen Ioannoy helen367 13222 Athens -------
+# Helen Thanoy helen36 11132 Peristeri 9718345
+# Vasilis Mamalis vas32 12345 Dafni 9738383
+#
+# (b) cat: softlink: No such file or directory
+#
+# "ask1link" is like a copy of "ask1.txt" (hard link), while "softlink" is a path leading to "ask1.txt"
+# and since there is no file "ask1.txt" there is no path (soft link).
+
+rm ask1.txt
+(a) cat ask1link
+(b) cat softlink 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 8.
+# Enter the file "ask1link" and delete the last line of the file. Then make sure that this change is also made in the file 
+# "ask1.txt".
+#
+# Answer : First, we will use the command "vi ask1link" to enter the file and delete its last line.
+# section. Once, we save it, we check its contents with the command "cat ask1link". We emphasize that we are on the path 
+# "/Documents/Project1/testdir1".
+#
+# Result of running the last command:
+# 
+# George Pappas george2 12136 Peristeri -------
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# George Georgioy george583 11132 Athens -------
+# Helen Georgioy helen3 12136 Peristeri 5748456
+# Nick Pappas nick4 11223 Aigaleo 5324123
+# Helen Ioannoy helen367 13222 Athens -------
+# Helen Thanoy helen36 11132 Peristeri 9718345
+
+vi ask1link
+cat ask1link
+
+# To make sure that this change has been made in the file "ask1.txt" we check its contents with the command "cat 
+# ask1.txt". Indeed, the change has been made in this file as well, since "ask1link" is the "hard link" of "ask1.txt", therefore, that a-
+# change made to "ask1link" will automatically be made to "ask1.txt" and vice versa.
+#
+# Result of executing the command :
+# 
+# George Pappas george2 12136 Peristeri -------
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# George Georgioy george583 11132 Athens -------
+# Helen Georgioy helen3 12136 Peristeri 5748456
+# Nick Pappas nick4 11223 Aigaleo 5324123
+# Helen Ioannoy helen367 13222 Athens -------
+# Helen Thanoy helen36 11132 Peristeri 9718345
+
+cat ask1.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 9.
+# Create a directory "kat1" and in it two files, "file1" and "file2", containing the word "one" and the word "two" 
+# the other. Run (inside the directory kat1) the command "cp *" and explain the result. Then run the command "mv *" and explain 
+# the result.
+#
+# Answer : First, we will use the command "mkdir" to create the directory ".Documents/Project1/kat1" and switch to
+# it with the command "cd". We use the "vi" command to create the files "file1" and "file2" respectively. Enter in the contents the words 
+# "one" and "two" in the files "file1" and "file2" respectively. We view their contents with the commands (a) "cat file1" and (b) "cat file2".
+#
+# Result of executing the last command:
+#
+# (a) one
+# (b) two
+
+mkdir kat1
+cd ./Documents/Project1/kat1
+vi file1
+vi file2
+(a) cat file1
+(b) cat file2
+
+# Then we run the command "cp *" and the commands (c) "cat file1", (d) "cat file2" to observe the differences in the contents of the files.
+# contents of the two files.
+#
+# Result of executing the last command: 
+# 
+# (c) one
+# (d) one
+
+cp *
+(c) cat file1
+(d) cat file2
+
+# As you can see, the two files have the same content, the word "one". The command "cp *" is essentially the same as the command "cp file1 file2". 
+# Essentially, the metacharacter "*" combined all the elements contained in the directory "cat1" (in this case the elements are 
+# only the files "file1" and "file2") in the "cp" command with the first file modified first (file1). Therefore, a copy is created 
+# file of "file1" named "file2" and since it already existed in the current directory, simply "file2" got the contents of "file1".
+#
+# Finally we run the command "mv *" and the commands (e) "cat file1", (g) "cat file2" to observe the differences in the contents of the 
+# of the two files.
+#
+# Result of executing the last command: 
+# 
+# (e) cat: file1: No such file or directory
+# (g) one 
+#
+
+mv *
+(e) cat file1
+(cat file2
+
+# As we can see, the file "file1" does not exist and "file2" contains the contents of "file1" the word "one" The command "mv *" essentially
+# is essentially the same as the "mv file1 file2" command. Essentially, the metacharacter "*" combined all the elements contained in the directory "kat1"
+# (in this case the elements are only the files "file1" and "file2") in the "mv" command with the file modified first 
+# (file1). Therefore, the file "file1" was renamed "file2" and its contents were passed to it (the word "one") resulting in a change of the
+# the first file "file1" was written.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 10. 
+# Show the lines of the file "ask1.txt" that end with one or more consecutive digits.
+#
+# Answer : We will use the command "grep" with parameter "-E" and arguments "[0-9]+$". We stress that the running directory is "./Documents
+# /Project1/testdir1". In more detail, the "-E" parameter is used for extended expressions and the "[0-9]+$" argument indicates that it is to be en-
+# display the lines of the file "ask1.txt" that end ($) with one or more consecutive digits (+).
+#
+# Result of the execution of the command :
+#
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# Helen Georgioy helen3 12136 Peristeri 5748456
+# Nick Pappas nick4 11223 Aigaleo 5324123
+# Helen Thanoy helen36 11132 11132 Peristeri 9718345
+
+grep -E "[0-9]+$" ./Documents/Project1/testdir1/ask1.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 11.
+# Display the lines in the file "ask1.txt" that contain the template "Pap" but do not contain the template "Aig".
+#
+# Answer : First, go to the directory where the file named "ask1.txt" is located using the command "cd" and path "./Documents/Project1
+# /testdir1". We will use the "|" (pipe) command to use two commands. First, the "grep" command with parameter "-E" for 
+# search for extended expressions and pattern "Pap", to display the lines of the file "ask1.txt" containing the pattern "Pap". Second-
+# second, the command "grep" with parameter "-Ev" to search for extended expressions (-E) and lines not containing the characteristic pattern (-v) 
+# and template "Aig", to display the lines of the file "ask1.txt" that do not contain the template "Aig". Therefore, with the pipe-
+# command (|), the lines of the file 'ask1.txt' that contain the 'Pap' template and at the same time do not contain the 'Aig' template are displayed.
+#
+# Result of the execution of the last command :
+# 
+# George Pappas george2 12136 Peristeri -------
+
+cd ./Documents/Project1/testdir1
+grep -E "Pap" ask1.txt | grep -Ev "Aig"
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 12.
+# Display the lines of the file "ask1.txt" which do not start with "G" or "N" and then contain (somewhere in their contents) the standard "ask1.txt".
+# "Geo" and "Per" in that order.
+#
+# Answer : First, go to the directory where the file named "ask1.txt" is located with the command "cd" and path "./Documents/Project1
+# /testdir1". We will use the "|" (pipe) command to use three commands. First, the command "grep" with parameter "-Ev" 
+# to search for extended expressions (-E) and lines that do not contain the attribute pattern (-v) and pattern "^[G,N]" to display 
+# lines in the file "ask1.txt" that do not contain the character "G" or "N" at the beginning of the line (metacharacter ^). Second, the command "grep" 
+# with parameter "-E" to search for extended expressions and template "Geo", to display the lines of the file "ask1.txt" containing the 
+# template "Geo". Third, the command "grep" with parameter "-E" to search for extended expressions and template "Per", to display the lines of the 
+# file "ask1.txt", containing the template "Per". Consequently, the pipe command (|) displays the lines of the file "ask1.txt", which
+# do not start with the character "G" or "N" and at the same time have in their contents, in order, the templates "Geo" and "Per".
+#
+# Result of the execution of the last command :
+#
+# Helen Georgioy helen3 12136 Peristeri 5748456
+
+cd ./Documents/Project1/testdir1
+grep -Ev "^[G,N]" ask1.txt | grep -E "Geo" | grep -E "Per"
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 13.
+# How many users whose username does not start with "ls1" are logged into the system?
+#
+# Answer: We will use the "|" (pipe) command to use two commands. First, the "who" command that displays which users are not using "who" or "who". 
+# are logged on to the system. Second, the "grep" command with parameter "-Ev" to search for extended expressions (-E) and lines that do not contain -
+# containing the characteristic pattern (-v) and pattern "^ls1", to show users whose name does not start with the pattern "ls1" (metacharacter
+# Therefore, the pipe (|) command will display users who are logged on to the system and whose name does not start with
+# "ls1".
+#
+# Result of executing the command : 
+#
+# ice19390005 :0 2021-12-22 15:27 (:0)
+
+who | grep -Ev ^ls1
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 14. 
+# Display all user (al/service) processes currently running on the system.
+#
+# Answer: We will use the command "ps" with parameters "-ef", where all processes of all users logged in are displayed
+# on the system (-e) and with information about each user's processes (-f). 
+#
+# Result of executing the command :
+# 
+# UID PID PID PPID C STIME TTY TIME CMD
+# root 1 0 0 15:27 ? 00:00:01 /sbin/init splash
+# root 2 0 0 0 15:27 ? 00:00:00:00 [kthreadd]
+# root 3 2 2 0 0 15:27 ? 00:00:00:00 [rcu_gp]
+# root 4 2 2 0 0 15:27 ? 00:00:00:00 [rcu_par_gp]
+# root 6 2 2 0 15:27 ? 00:00:00 [kworker/0:0H-events_highpr
+# root 9 2 2 0 15:27 ? 00:00:00:00 [mm_percpu_wq]
+# root 10 2 2 0 15:27 ? 00:00:00:00 [rcu_tasks_rude_]
+# root 11 2 2 0 15:27 ? 00:00:00:00 [rcu_tasks_trace]
+# root 12 2 2 0 15:27 ? 00:00:00:00 [ksoftirqd/0]
+# root 13 2 2 0 15:27 ? 00:00:01 [rcu_sched]
+# root 14 2 0 2 0 15:27 ? 00:00:00:00 [migration/0]
+# root 15 2 0 2 0 15:27 ? 00:00:00:00 [idle_inject/0]
+# root 16 2 2 0 15:27 ? 00:00:00:00 [cpuhp/0]
+# root 17 2 2 0 15:27 ? 00:00:00:00 [cpuhp/1]
+# root 18 2 2 0 15:27 ? 00:00:00:00 [idle_inject/1]
+# root 19 2 2 0 15:27 ? 00:00:00:00 [migration/1]
+# root 20 2 2 0 15:27 ? 00:00:00:00 [ksoftirqd/1]
+# root 22 2 2 0 15:27 ? 00:00:00 [kworker/1:0H-events_highpr
+# root 23 2 2 0 15:27 ? 00:00:00:00 [cpuhp/2]
+# root 24 2 2 0 15:27 ? 00:00:00:00 [idle_inject/2]
+# root 25 2 2 0 15:27 ? 00:00:00:00 [migration/2]
+# root 26 2 2 0 15:27 ? 00:00:00:00 [ksoftirqd/2]
+# root 28 2 2 0 15:27 ? 00:00:00 [kworker/2:0H-events_highpr
+# root 29 2 2 0 15:27 ? 00:00:00:00 [cpuhp/3]
+# root 30 2 2 0 15:27 ? 00:00:00:00 [idle_inject/3]
+# root 31 2 2 0 15:27 ? 00:00:00:00 [migration/3]
+# root 32 2 0 2 0 15:27 ? 00:00:00:00 [ksoftirqd/3]
+# root 34 2 0 2 0 15:27 ? 00:00:00 [kworker/3:0H-kblockd]
+# root 35 2 2 0 15:27 ? 00:00:00:00 [kdevtmpfs]
+# root 36 2 2 0 15:27 ? 00:00:00:00 [netns]
+# root 37 2 2 0 15:27 ? 00:00:00:00 [inet_frag_wq]
+# root 38 2 0 2 0 15:27 ? 00:00:00:00 [cauditd]
+# root 39 2 0 2 0 15:27 ? 00:00:00:00 [khungtaskd]
+# root 40 2 0 2 0 15:27 ? 00:00:00:00 [oom_reaper]
+# root 41 2 2 0 15:27 ? 00:00:00:00 [writeback]
+# root 42 2 2 0 15:27 ? 00:00:00:00 [kcompactd0]
+# root 43 2 2 0 15:27 ? 00:00:00:00 [ksmd]
+# root 44 2 2 0 15:27 ? 00:00:00:00 [khugepaged]
+# root 91 2 0 2 0 15:27 ? 00:00:00:00 [kintegrityd]
+# root 92 2 0 2 0 15:27 ? 00:00:00:00 [kblockd]
+# root 93 2 0 2 0 15:27 ? 00:00:00:00 [blkcg_punt_bio]
+# root 94 2 0 2 0 15:27 ? 00:00:00:00 [tpm_dev_wq]
+# root 95 2 0 2 0 15:27 ? 00:00:00:00 [ata_sff]
+# root 96 2 0 2 0 15:27 ? 00:00:00:00 [md]
+# root 97 2 0 2 0 15:27 ? 00:00:00:00 [edac-poller]
+# root 98 2 0 2 0 15:27 ? 00:00:00:00 [devfreq_wq]
+# root 100 2 0 2 0 15:27 ? 00:00:00:00 [watchdogd]
+# root 103 2 0 2 0 15:27 ? 00:00:00 [kworker/2:1H-kblockd]
+# root 105 2 0 2 0 15:27 ? 00:00:00:00 [kswapd0]
+# root 106 2 0 2 0 15:27 ? 00:00:00:00 [ecryptfs-kthrea]
+# root 108 2 0 2 0 15:27 ? 00:00:00:00 [kthrotld]
+# root 109 2 0 2 0 15:27 ? 00:00:00:00 [acpi_thermal_pm]
+# root 110 2 0 2 0 15:27 ? 00:00:00:00 [scsi_eh_0]
+# root 111 2 0 2 0 15:27 ? 00:00:00:00 [scsi_tmf_0]
+# root 112 2 0 2 0 15:27 ? 00:00:00:00 [scsi_eh_1]
+# root 113 2 0 2 0 15:27 ? 00:00:00:00 [scsi_tmf_1]
+# root 115 2 0 2 0 15:27 ? 00:00:00:00 [vfio-irqfd-clea]
+# root 117 2 0 2 0 15:27 ? 00:00:00:00 [ipv6_addrconf]
+# root 126 2 0 2 0 15:27 ? 00:00:00:00 [kstrp]
+# root 129 2 0 2 0 15:27 ? 00:00:00:00 [zswap-shrink]
+# root 130 2 0 2 0 15:27 ? 00:00:00:00 [kworker/u9:0]
+# root 135 2 2 0 15:27 ? 00:00:00:00 [charger_manager]
+# root 137 2 0 2 0 15:27 ? 00:00:00 [kworker/3:1H-kblockd]
+# root 160 2 0 2 0 15:27 ? 00:00:00 [kworker/0:1H-kblockd]
+# root 188 2 0 2 0 15:27 ? 00:00:00:00 [scsi_eh_2]
+# root 189 2 0 2 0 15:27 ? 00:00:00:00 [scsi_tmf_2]
+# root 191 2 0 2 0 15:27 ? 00:00:00 [kworker/1:1H-kblockd]
+# root 212 2 0 2 0 15:27 ? 00:00:00:00 [jbd2/sda5-8]
+# root 213 2 0 2 0 15:27 ? 00:00:00:00 [ext4-rsv-conver]
+# root 253 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-journa
+# root 277 2 0 2 0 15:27 ? 00:00:00:00 [irq/18-vmwgfx]
+# root 278 2 2 0 15:27 ? 00:00:00:00 [ttm_swap]
+# root 279 2 2 0 15:27 ? 00:00:00:00 [card0-crtc0]
+# root 280 2 2 0 15:27 ? 00:00:00:00 [card0-crtc1]
+# root 281 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc2]
+# root 282 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc3]
+# root 283 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc4]
+# root 284 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc5]
+# root 285 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc6]
+# root 286 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc7]
+# root 287 2 0 2 0 15:27 ? 00:00:00:00 [loop0]
+# root 293 2 0 2 0 15:27 ? 00:00:00:00 [loop1]
+# root 298 2 0 2 0 15:27 ? 00:00:00:00 [loop2]
+# root 302 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-udevd
+# root 306 2 2 0 15:27 ? 00:00:00:00 [loop3]
+# root 307 2 2 0 15:27 ? 00:00:00:00 [loop4]
+# root 309 2 0 2 0 15:27 ? 00:00:00:00 [loop5]
+# root 310 2 0 2 0 15:27 ? 00:00:00:00 [loop6]
+# root 311 2 0 2 0 15:27 ? 00:00:00:00 [loop7]
+# root 312 2 0 2 0 15:27 ? 00:00:00:00 [loop8]
+# root 314 2 0 2 0 15:27 ? 00:00:00:00 [loop9]
+# root 315 2 0 2 0 15:27 ? 00:00:00:00 [loop10]
+# root 330 2 0 2 0 15:27 ? 00:00:00:00 [loop11]
+# root 344 2 0 2 0 15:27 ? 00:00:00:00 [loop12]
+# root 345 2 0 2 0 15:27 ? 00:00:00:00 [loop13]
+# root 372 2 0 2 0 15:27 ? 00:00:00:00 [cryptd]
+# systemd+ 569 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-resolv
+# systemd+ 570 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-timesy
+# root 602 1 0 1 0 15:27 ? 00:00:00:00 /usr/lib/accountsservice/ac
+# root 603 1 0 1 0 15:27 ? 00:00:00:00 /usr/sbin/acpid
+# avahi 606 1 0 15:27 ? 00:00:00:00 avahi-daemon: running [Ath.
+# root 607 1 0 15:27 ? 00:00:00:00 /usr/sbin/cron -f
+# message+ 609 1 1 0 15:27 ? 00:00:00:00 /usr/bin/dbus-daemon --syst
+# root 610 1 0 1 0 15:27 ? 00:00:00:00 /usr/sbin/NetworkManager --
+# root 618 1 0 1 0 15:27 ? 00:00:00:00 /usr/sbin/irqbalance --fore
+# root 619 1 1 0 15:27 ? 00:00:00:00 /usr/bin/python3 /usr/bin/n
+# root 622 1 1 0 15:27 ? 00:00:00:00 /usr/lib/policykit-1/polkit
+# syslog 627 1 0 15:27 ? 00:00:00:00 /usr/sbin/rsyslogd -n -iNON
+# root 631 1 0 1 0 15:27 ? 00:00:01 /usr/lib/snapd/snapd
+# root 633 1 0 1 0 15:27 ? 00:00:00:00 /usr/libexec/switcheroo-con
+# root 639 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-logind
+# root 642 1 0 1 0 15:27 ? 00:00:00:00 /usr/lib/udisks2/udisksd
+# root 643 1 0 15:27 ? 00:00:00:00 /sbin/wpa_supplicant -u -s 
+# avahi 651 606 0 15:27 ? 00:00:00:00 avahi-daemon: chroot helper
+# root 697 1 1 0 15:27 ? 00:00:00:00 /usr/sbin/cupsd -l
+# root 713 1 1 0 15:27 ? 00:00:00:00 /usr/sbin/cups-browsed
+# root 720 1 0 15:27 ? 00:00:00:00 /usr/sbin/ModemManager --fi
+# root 728 1 0 1 0 15:27 ? 00:00:00:00 /usr/bin/python3 /usr/share
+# root 746 1 0 15:27 ? 00:00:00:00 /usr/sbin/gdm3
+# root 757 746 0 15:27 ? 00:00:00:00 gdm-session-worker [pam/gdm
+# whoopsie 772 1 1 0 15:27 ? 00:00:00:00 /usr/bin/whoopsie -f
+# kernoops 777 1 0 15:27 ? 00:00:00:00 /usr/sbin/kerneloops --test
+# kernoops 780 1 0 1 0 15:27 ? 00:00:00:00 /usr/sbin/kerneloops
+# ice1939+ 830 1 0 15:27 ? 00:00:01 /lib/systemd/systemd --user
+# ice1939+ 831 830 0 15:27 ? 00:00:00:00 (sd-pam)
+# ice1939+ 844 830 0 15:27 ? 00:00:00:00 /usr/bin/pulseaudio --daemo
+# ice1939+ 846 830 0 15:27 ? 00:00:00:00 /usr/libexec/tracker-miner-
+# ice1939+ 851 1 0 0 15:27 ? 00:00:00:00 /usr/bin/gnome-keyring-daem
+# ice1939+ 858 757 0 15:27 tty2 00:00:00:00 /usr/lib/gdm3/gdm-x-session
+# ice1939+ 860 858 0 15:27 tty2 00:01:01 /usr/lib/xorg/Xorg vt2 -dis
+# rtkit 862 1 0 15:27 ? 00:00:00:00 /usr/libexec/rtkit-daemon
+# ice1939+ 868 830 0 15:27 ? 00:00:01 /usr/bin/dbus-daemon --sess
+# ice1939+ 895 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfsd
+# ice1939+ 903 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfsd-fuse /ru
+# ice1939+ 911 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfs-udisks2-v
+# ice1939+ 919 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfs-mtp-volume
+# ice1939+ 923 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfs-afc-volum
+# ice1939+ 938 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfs-gphoto2-v
+# ice1939+ 943 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfs-goa-volum
+# ice1939+ 947 830 0 15:27 ? 00:00:02 /usr/libexec/goa-daemon
+# ice1939+ 991 830 0 15:27 ? 00:00:00:00 /usr/libexec/goa-identity-s
+# root 996 1 0 15:27 ? 00:00:00:00 /usr/lib/upower/upowerd
+# ice1939+ 1013 858 0 15:27 tty2 00:00:00:00 /usr/libexec/gnome-session-
+# ice1939+ 1085 1013 0 15:27 ? 00:00:00:00 /usr/bin/ssh-agent /usr/bin
+# ice1939+ 1117 830 0 15:27 ? 00:00:00:00 /usr/libexec/at-spi-bus-blue
+# ice1939+ 1122 1117 0 15:27 ? 00:00:00:00 /usr/bin/dbus-daemon --conf
+# ice1939+ 1153 830 0 15:27 ? 00:00:00:00 /usr/bin/gnome-keyring-daem
+# ice1939+ 1154 830 0 15:27 ? 00:00:00:00 /usr/libexec/gnome-session-
+# ice1939+ 1163 830 0 15:27 ? 00:00:00:00 /usr/libexec/gnome-session-
+# ice1939+ 1178 830 0 15:27 ? 00:00:00:00 /usr/libexec/at-spi2-regist
+# ice1939+ 1191 830 1 15:27 ? 00:02:20 /usr/bin/gnome-shell
+# ice1939+ 1222 1191 0 15:27 ? 00:00:00:00 ibus-daemon --panel disable
+# ice1939+ 1226 1222 0 15:27 ? 00:00:00:00 /usr/libexec/ibus-memconf
+# ice1939+ 1227 1222 0 15:27 ? 00:00:01 /usr/libexec/ibus-extension
+# ice1939+ 1229 830 0 15:27 ? 00:00:00:00 /usr/libexec/ibus-x11 --kil
+# ice1939+ 1235 830 0 15:27 ? 00:00:00:00 /usr/libexec/ibus-portal
+# ice1939+ 1245 830 0 15:27 ? 00:00:00:00 /usr/libexec/xdg-permission
+# ice1939+ 1250 830 0 15:27 ? 00:00:00:00 /usr/libexec/gnome-shell-ca
+# ice1939+ 1258 830 0 15:27 ? 00:00:00:00 /usr/libexec/evolution-sour
+# ice1939+ 1269 830 0 15:27 ? 00:00:00:00 /usr/libexec/dconf-service
+# ice1939+ 1272 830 0 15:27 ? 00:00:00:00 /usr/libexec/gvfsd-metadata
+# ice1939+ 1284 830 0 15:27 ? 00:00:00:00 /usr/libexec/evolution-cale
+# ice1939+ 1294 830 0 15:27 ? 00:00:00:00 /usr/bin/gjs /usr/share/gno
+# ice1939+ 1314 895 0 15:27 ? 00:00:00:00 /usr/libexec/gvfsd-trash --
+# ice1939+ 1325 830 0 15:27 ? 00:00:00:00 /usr/libexec/evolution-addr
+# ice1939+ 1328 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-a11y-set
+# ice1939+ 1329 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-color
+# ice1939+ 1330 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-datetime
+# ice1939+ 1332 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-housekeepi
+# ice1939+ 1333 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-keyboard
+# ice1939+ 1335 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-media-keys
+# ice1939+ 1336 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-power
+# ice1939+ 1338 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-print-noti
+# ice1939+ 1339 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-rfkill
+# ice1939+ 1340 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-screensave
+# ice1939+ 1341 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-sharing
+# ice1939+ 1342 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-smartcard
+# ice1939+ 1343 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-sound
+# ice1939+ 1344 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-usb-protec
+# ice1939+ 1345 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-wacom
+# ice1939+ 1346 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-wwan
+# ice1939+ 1350 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-xsettings
+# ice1939+ 1376 830 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-printer
+# ice1939+ 1388 1163 0 15:27 ? 00:00:00:00 /usr/libexec/gsd-disk-util
+# ice1939+ 1392 1163 0 15:27 ? 00:00:00:00 /usr/libexec/evolution-data
+# ice1939+ 1414 1222 0 15:27 ? 00:00:00:00 /usr/libexec/ibus-engine-si
+# colord 1476 1 1 0 15:27 ? 00:00:00:00 /usr/libexec/colord
+# ice1939+ 1568 1163 0 15:28 ? 00:00:00:00 update-notifier
+# ice1939+ 1806 830 0 15:32 ? 00:01:22 /usr/lib/firefox/firefox -n
+# ice1939+ 1866 1806 0 15:32 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# ice1939+ 1909 1806 0 15:32 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# ice1939+ 1982 1806 0 15:32 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# ice1939+ 2012 830 0 15:32 ? 00:00:16 /usr/bin/nautilus --gapplic
+# ice1939+ 2042 1806 1 15:32 ? 00:02:23 /usr/lib/firefox/firefox -c
+# ice1939+ 2044 1806 0 15:32 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# ice1939+ 2068 1806 0 15:32 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# ice1939+ 2329 830 0 15:51 ? 00:00:17 /usr/libexec/gnome-terminal
+# ice1939+ 2337 2329 0 15:51 pts/0 00:00:00:00 bash
+# root 3030 2 2 0 16:54 ? 00:00:00 [kworker/u8:2-ext4-rsv-conv
+# ice1939+ 3092 1806 0 16:56 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# ice1939+ 3112 1806 0 16:56 ? 00:00:00:00 /usr/lib/firefox/firefox -c
+# root 3125 2 2 0 16:56 ? 00:00:00:00 [kworker/2:3-events]
+# root 3314 2 0 2 0 17:15 ? 00:00:00:00 [kworker/0:0-events]
+# root 3519 2 0 17:39 ? 00:00:00:00 [kworker/3:1-events]
+# root 3707 2 0 18:00 ? 00:00:00 [kworker/2:1-mm_percpu_wq]
+# root 3729 2 0 18:04 ? 00:00:00 [kworker/1:0-cgroup_destroy
+# root 3789 2 0 18:16 ? 00:00:00 [kworker/u8:1-events_power_
+# root 3791 2 0 18:16 ? 00:00:00:00 [kworker/1:1-events]
+# root 3794 2 0 2 0 18:16 ? 00:00:00:00 [kworker/0:1-events]
+# root 3811 2 0 18:20 ? 00:00:00 [kworker/u8:3+events_unboun
+# root 3818 1 0 18:21 ? 00:00:00:00 /usr/libexec/fwupd/fwupd
+# root 3854 2 0 18:21 ? 00:00:00:00 [kworker/3:0-events]
+# root 3894 2 0 2 0 18:30 ? 00:00:00:00 [kworker/1:2-events]
+# root 3899 2 0 18:32 ? 00:00:00 [kworker/u8:0-events_unboun
+# ice1939+ 3937 2337 0 18:35 pts/0 00:00:00 ps -ef
+
+ps -ef
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 15.
+# How many user (al/z) processes are running on the system and their names end with "sh"?
+#
+# Answer : The user processes running on the system and ending their name with "sh" are "2". We will use the pipe command 
+# "|" to use three commands. First, the command "ps" with parameters "-eaf", where all the processes of all users that
+# logged into the system (-ea) and with each user's "inodes" (-f). Second, the "grep" command with parameter "sh$", which displays all the
+# all processes whose name ends with the pattern "sh" (metacharacter $). Third, the "wc" command with parameter "-l", which will display the
+# number of lines in the result of the "grep" command, i.e., the number of user processes whose name ends with the "sh" pattern. Co-
+# Similarly, the "|" intellisense command will display the number of all user processes running on the system whose name ends with 
+# "sh".
+#
+# Result of executing the command : 
+#
+# root 1 0 0 15:27 ? 00:00:01 /sbin/init splash
+# ice1939+ 2337 2329 0 15:51 pts/0 00:00:00:00 bash
+
+ps -eaf | grep sh$
+
+
+# Result of executing the command : 
+#
+# 2
+
+ps -eaf | grep sh$ | wc -l
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 16.
+# Which processes (of any kind) are currently running from the administrator account?
+#
+# Answer : We will use the pipe "|" command to use two commands. First, the command "ps" with parameters "-ef", where ε-
+# all processes of all users logged into the system (-e) are displayed, and with information about each user's processes (-f).
+# Second, the command "grep" with parameter "^root", where all processes whose name starts with the pattern "root" (meta-character-
+# of $). Therefore, the "|" intellisense command displays all processes currently running from the administrator (root) account.
+#
+# Result of executing the command :
+# 
+# root 1 0 0 15:27 ? 00:00:01 /sbin/init splash
+# root 2 0 0 0 15:27 ? 00:00:00:00 [kthreadd]
+# root 3 2 2 0 0 15:27 ? 00:00:00:00 [rcu_gp]
+# root 4 2 2 0 0 15:27 ? 00:00:00:00 [rcu_par_gp]
+# root 6 2 2 0 15:27 ? 00:00:00 [kworker/0:0H-events_highpri]
+# root 9 2 2 0 15:27 ? 00:00:00:00 [mm_percpu_wq]
+# root 10 2 2 0 15:27 ? 00:00:00:00 [rcu_tasks_rude_]
+# root 11 2 2 0 15:27 ? 00:00:00:00 [rcu_tasks_trace]
+# root 12 2 2 0 15:27 ? 00:00:00:00 [ksoftirqd/0]
+# root 13 2 2 0 15:27 ? 00:00:02 [rcu_sched]
+# root 14 2 0 2 0 15:27 ? 00:00:00:00 [migration/0]
+# root 15 2 0 15:27 ? 00:00:00:00 [idle_inject/0]
+# root 16 2 2 0 15:27 ? 00:00:00:00 [cpuhp/0]
+# root 17 2 2 0 15:27 ? 00:00:00:00 [cpuhp/1]
+# root 18 2 2 0 15:27 ? 00:00:00:00 [idle_inject/1]
+# root 19 2 2 0 15:27 ? 00:00:00:00 [migration/1]
+# root 20 2 2 0 15:27 ? 00:00:00:00 [ksoftirqd/1]
+# root 22 2 2 0 15:27 ? 00:00:00 [kworker/1:0H-events_highpri]
+# root 23 2 2 0 15:27 ? 00:00:00:00 [cpuhp/2]
+# root 24 2 2 0 15:27 ? 00:00:00:00 [idle_inject/2]
+# root 25 2 2 0 15:27 ? 00:00:00:00 [migration/2]
+# root 26 2 2 0 15:27 ? 00:00:00:00 [ksoftirqd/2]
+# root 28 2 2 0 15:27 ? 00:00:00 [kworker/2:0H-events_highpri]
+# root 29 2 2 0 15:27 ? 00:00:00:00 [cpuhp/3]
+# root 30 2 2 0 15:27 ? 00:00:00:00 [idle_inject/3]
+# root 31 2 2 0 15:27 ? 00:00:00:00 [migration/3]
+# root 32 2 0 2 0 15:27 ? 00:00:00:00 [ksoftirqd/3]
+# root 34 2 0 2 0 15:27 ? 00:00:00 [kworker/3:0H-kblockd]
+# root 35 2 2 0 15:27 ? 00:00:00:00 [kdevtmpfs]
+# root 36 2 2 0 15:27 ? 00:00:00:00 [netns]
+# root 37 2 2 0 15:27 ? 00:00:00:00 [inet_frag_wq]
+# root 38 2 0 2 0 15:27 ? 00:00:00:00 [cauditd]
+# root 39 2 0 2 0 15:27 ? 00:00:00:00 [khungtaskd]
+# root 40 2 0 2 0 15:27 ? 00:00:00:00 [oom_reaper]
+# root 41 2 2 0 15:27 ? 00:00:00:00 [writeback]
+# root 42 2 2 0 15:27 ? 00:00:00:00 [kcompactd0]
+# root 43 2 2 0 15:27 ? 00:00:00:00 [ksmd]
+# root 44 2 2 0 15:27 ? 00:00:00:00 [khugepaged]
+# root 91 2 0 2 0 15:27 ? 00:00:00:00 [kintegrityd]
+# root 92 2 0 2 0 15:27 ? 00:00:00:00 [kblockd]
+# root 93 2 0 2 0 15:27 ? 00:00:00:00 [blkcg_punt_bio]
+# root 94 2 0 2 0 15:27 ? 00:00:00:00 [tpm_dev_wq]
+# root 95 2 0 2 0 15:27 ? 00:00:00:00 [ata_sff]
+# root 96 2 0 2 0 15:27 ? 00:00:00:00 [md]
+# root 97 2 0 2 0 15:27 ? 00:00:00:00 [edac-poller]
+# root 98 2 0 2 0 15:27 ? 00:00:00:00 [devfreq_wq]
+# root 100 2 0 2 0 15:27 ? 00:00:00:00 [watchdogd]
+# root 103 2 0 2 0 15:27 ? 00:00:00 [kworker/2:1H-kblockd]
+# root 105 2 0 2 0 15:27 ? 00:00:00:00 [kswapd0]
+# root 106 2 0 2 0 15:27 ? 00:00:00:00 [ecryptfs-kthrea]
+# root 108 2 0 2 0 15:27 ? 00:00:00:00 [kthrotld]
+# root 109 2 0 2 0 15:27 ? 00:00:00:00 [acpi_thermal_pm]
+# root 110 2 0 2 0 15:27 ? 00:00:00:00 [scsi_eh_0]
+# root 111 2 0 2 0 15:27 ? 00:00:00:00 [scsi_tmf_0]
+# root 112 2 0 2 0 15:27 ? 00:00:00:00 [scsi_eh_1]
+# root 113 2 0 2 0 15:27 ? 00:00:00:00 [scsi_tmf_1]
+# root 115 2 0 2 0 15:27 ? 00:00:00:00 [vfio-irqfd-clea]
+# root 117 2 0 2 0 15:27 ? 00:00:00:00 [ipv6_addrconf]
+# root 126 2 0 2 0 15:27 ? 00:00:00:00 [kstrp]
+# root 129 2 0 2 0 15:27 ? 00:00:00:00 [zswap-shrink]
+# root 130 2 0 2 0 15:27 ? 00:00:00:00 [kworker/u9:0]
+# root 135 2 2 0 15:27 ? 00:00:00:00 [charger_manager]
+# root 137 2 0 2 0 15:27 ? 00:00:00 [kworker/3:1H-kblockd]
+# root 160 2 0 2 0 15:27 ? 00:00:00 [kworker/0:1H-kblockd]
+# root 188 2 0 2 0 15:27 ? 00:00:00:00 [scsi_eh_2]
+# root 189 2 0 2 0 15:27 ? 00:00:00:00 [scsi_tmf_2]
+# root 191 2 0 2 0 15:27 ? 00:00:00 [kworker/1:1H-kblockd]
+# root 212 2 0 2 0 15:27 ? 00:00:00:00 [jbd2/sda5-8]
+# root 213 2 0 2 0 15:27 ? 00:00:00:00 [ext4-rsv-conver]
+# root 253 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-journald
+# root 277 2 0 2 0 15:27 ? 00:00:01 [irq/18-vmwgfx]
+# root 278 2 2 0 15:27 ? 00:00:00:00 [ttm_swap]
+# root 279 2 2 0 15:27 ? 00:00:00:00 [card0-crtc0]
+# root 280 2 2 0 15:27 ? 00:00:00:00 [card0-crtc1]
+# root 281 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc2]
+# root 282 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc3]
+# root 283 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc4]
+# root 284 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc5]
+# root 285 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc6]
+# root 286 2 0 2 0 15:27 ? 00:00:00:00 [card0-crtc7]
+# root 287 2 0 2 0 15:27 ? 00:00:00:00 [loop0]
+# root 293 2 0 2 0 15:27 ? 00:00:00:00 [loop1]
+# root 298 2 0 2 0 15:27 ? 00:00:00:00 [loop2]
+# root 302 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-udevd
+# root 306 2 2 0 15:27 ? 00:00:00:00 [loop3]
+# root 307 2 2 0 15:27 ? 00:00:00:00 [loop4]
+# root 309 2 0 2 0 15:27 ? 00:00:00:00 [loop5]
+# root 310 2 0 2 0 15:27 ? 00:00:00:00 [loop6]
+# root 311 2 0 2 0 15:27 ? 00:00:00:00 [loop7]
+# root 312 2 0 2 0 15:27 ? 00:00:00:00 [loop8]
+# root 314 2 0 2 0 15:27 ? 00:00:00:00 [loop9]
+# root 315 2 0 2 0 15:27 ? 00:00:00:00 [loop10]
+# root 330 2 0 2 0 15:27 ? 00:00:00:00 [loop11]
+# root 344 2 0 2 0 15:27 ? 00:00:00:00 [loop12]
+# root 345 2 0 2 0 15:27 ? 00:00:00:00 [loop13]
+# root 372 2 0 2 0 15:27 ? 00:00:00:00 [cryptd]
+# root 602 1 0 1 0 15:27 ? 00:00:00:00 /usr/lib/accountsservice/accounts-daemon
+# root 603 1 0 1 0 15:27 ? 00:00:01 /usr/sbin/acpid
+# root 607 1 0 15:27 ? 00:00:00:00 /usr/sbin/cron -f
+# root 610 1 0 15:27 ? 00:00:01 /usr/sbin/NetworkManager --no-daemon
+# root 618 1 0 1 0 15:27 ? 00:00:00:00 /usr/sbin/irqbalance --foreground
+# root 619 1 1 0 15:27 ? 00:00:00:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+# root 622 1 0 1 0 15:27 ? 00:00:00:00 /usr/lib/policykit-1/polkitd --no-debug
+# root 631 1 0 1 0 15:27 ? 00:00:02 /usr/lib/snapd/snapd
+# root 633 1 0 1 0 15:27 ? 00:00:00:00 /usr/libexec/switcheroo-control
+# root 639 1 0 1 0 15:27 ? 00:00:00:00 /lib/systemd/systemd-logind
+# root 642 1 0 1 0 15:27 ? 00:00:00:00 /usr/lib/udisks2/udisksd
+# root 643 1 0 15:27 ? 00:00:00:00 /sbin/wpa_supplicant -u -s -s -O /run/wpa_supplicant
+# root 697 1 0 15:27 ? 00:00:00:00 /usr/sbin/cupsd -l
+# root 713 1 0 1 0 15:27 ? 00:00:00:00 /usr/sbin/cups-browsed
+# root 720 1 0 15:27 ? 00:00:00:00 /usr/sbin/ModemManager --filter-policy=strict
+# root 728 1 0 1 0 15:27 ? 00:00:00:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+# root 746 1 0 15:27 ? 00:00:00:00 /usr/sbin/gdm3
+# root 757 746 0 15:27 ? 00:00:00:00 gdm-session-worker [pam/gdm-autologin]
+# root 996 1 0 15:27 ? 00:00:00:00 /usr/lib/upower/upowerd
+# root 4550 2 0 20:28 ? 00:00:00:00 [kworker/3:0-events]
+# root 5171 2 0 2 0 20:33 ? 00:00:00:00 [kworker/2:1-events]
+# root 5181 2 0 20:38 ? 00:00:00:00 [kworker/0:2-events]
+# root 5278 2 0 20:44 ? 00:00:00:00 [kworker/2:2]
+# root 5304 2 0 20:48 ? 00:00:00 [kworker/u8:0-events_unbound]
+# root 5420 2 0 2 0 20:53 ? 00:00:00 [kworker/u8:1-events_power_efficient]
+# root 5488 2 0 21:01 ? 00:00:00:00 [kworker/1:2-events]
+# root 5493 2 0 21:01 ? 00:00:00:00 [kworker/0:0-ata_sff]
+# root 5525 2 0 21:04 ? 00:00:00 [kworker/3:2-mm_percpu_wq]
+# root 5541 2 0 21:09 ? 00:00:00:00 [kworker/1:0-events]
+# root 5554 2 0 21:14 ? 00:00:00 [kworker/u8:2-events_unbound]
+
+ps -ef | grep ^root
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 17.
+# How many files in your current directory (just the current directory - not its subdirectories) have "permissions" "rw" from everyone and "x" from 
+# no one?
+#
+# Answer : Go to the directory "./Documents/Project1" with the "cd" command. We'll use the pipe command "|" to use the "|" command to use the "dd" command.
+# three commands. First, "find" with parameter "-maxdepth 0", to search below "0" levels from the current directory "Project1".
+# Second, the "find" command with parameter "-perm 777", to search for files with permissions in the octal numbering system "777". Third,
+# the command "wc" with parameter "-l", displays the number of files in the directory "Project1" that have permissions "rw" from everyone and "x" from no-
+# Therefore, the "|" intrusion command "|" displays all files in the directory "Project1" (without its subdirectories) with permissions 
+# "rw" by everyone and "x" by no one (in the octal numbering system 777).
+#
+# Result of executing the last command :
+# 
+# 1
+
+cd ./Documents/Project1
+find -maxdepth 0 | find -perm 777 | wc -l
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 20.
+# Sort the contents of the file "ask1.txt" by "username" in descending order.
+#
+# Answer : Go to the directory "./Documents/Project1/testdir1" with the command "cd". We will use the command "sort" with parameter "-r" 
+# to sort the contents of the file "ask1.txt" by "username" in descending order.
+#
+# Result of executing the last command :
+#
+# Nick Pappas nick4 11223 Aigaleo 5324123
+# Nick Nikolaoy nick23 12232 Aigaleo 5314555
+# Helen Thanoy helen36 11132 Peristeri 9718345
+# Helen Ioannoy helen367 13222 Athens -------
+# Helen Georgioy helen3 12136 Peristeri 5748456
+# George Pappas george2 12136 Peristeri -------
+# George Georgioy george583 11132 Athens -------
+
+cd ./Documents/Project1/testdir1 
+sort -r ask1.txt
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 26.
+# Let the following file system items with "protection strings": (a) "-rwxr-x--x", (b) "drwxr-x--- " and (c) "drwx--x--x". Explain what kind of "items" 
+# are and what the "user", "group" and "others" access rights are to them.
+#
+# Answer : (a) The first "item" is a file from the first column of the "protection string" which is the character "-". The permissions of "user" are 
+# "rwx", from the second, third, fourth column of the "protection string", i.e., read "r", write "w" and execute "x". The permissions
+# The "group" rights are "rx", from the fifth, sixth and seventh columns of the "protection string", i.e., read "r" and execute "x". Finally,
+# the permissions of "others" are "x" from the eighth, ninth and tenth columns of the "protection string", i.e., the execution "x". 
+# (b) The second "item" is a directory from the first column of the "protection string" which is the character "d" (directory). The permissions of the "user" 
+# is "rwx", from the second, third, fourth column of the "protection string", i.e., read "r", write "w" and execute "x". The 
+# privileges of "group" are "rx", from the fifth, sixth and seventh columns of the "protection string", i.e., read "r" and execute "x".
+# Finally, the remaining "others" from the eighth, ninth and tenth columns of the "protection string" have no permissions.
+# (c) The third "item" is a directory from the first column of the "protection string" which is the character "d" (directory). The permissions of "user" 
+# are "rwx", from the second, third, fourth column of the "protection string", i.e., read "r", write "w" and execute "x". The 
+# privileges of "group" are "x", from the fifth, sixth and seventh columns of the "protection string", i.e., the execution "x".
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+# Question 27.
+# Change the permissions of all files in the directory "testdir1" so that only the owner has execute and write permission, while right-
+# read permission to everyone.
+#
+# Answer : Go to the directory "./Documents/Project1/testdir1" with the command "cd". We will use the "chmod" command to change
+# the "permissions" of the files with corresponding parameters.
+
+chmod u+x ask1.txt
+
+# We add the permission to execute "x" to the owner "user"
+
+chmod g-w ask1.txt
+
+# Remove the write permission from "group"
+#
+# Result of executing the command :
+#
+# -rwxr--r-- 2 ice19390005 ice19390005 312 Dec 17 02:17 ask1.txt*
+
+
+
+
+
+
+
+
+
+
+
+
+
