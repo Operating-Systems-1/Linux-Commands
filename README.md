@@ -42,6 +42,7 @@ This hands-on assignment aims to build a solid foundation in Linux command usage
 
 
 ### 1. Clone the Repository
+Download the repository to your local machine's file system:
 ```
 git clone https://github.com/Operating-Systems-1/Linux-Commands.git
 ```
@@ -90,6 +91,7 @@ git clone https://github.com/Operating-Systems-1/Linux-Commands.git
 
 
 ### 1. Κλωνοποιήστε το αποθετήριο
+Κατεβάστε το αποθετήριο στο σύστημα αρχείων του τοπικού σας μηχανήματος:
 ```
 git clone https://github.com/Operating-Systems-1/Linux-Commands.git
 ```
