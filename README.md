@@ -2,6 +2,8 @@
 
 # Linux Commands
 
+For the requested Assignment, click the link:
+[Assignment](Assignment/EN_OS1_Lab_Ask-1-2021-22.pdf)
 For the detailed Documentation, click the link:
 [Documentation](Documentation/#EN_19390005.G9.EX1.txt)
 
@@ -47,8 +49,10 @@ cd Linux-Commands
 
 # Εντολές Linux
 
-Για τη λεπτομερή τεκμηρίωση, κάντε κλικ στο σύνδεσμο:
-[Τεκμηρίωση](Documentation/#EN_19390005.G9.EX1.txt)
+Για την ζητούμενη Εργασία, κάντε κλικ στο σύνδεσμο:
+[Εργασία](Assignment/#GR_OS1_Lab_Ask-1-2021-22.pdf)
+Για τη λεπτομερή Τεκμηρίωση, κάντε κλικ στο σύνδεσμο:
+[Τεκμηρίωση](Documentation/#GR_19390005.G9.EX1.txt)
 
 ## Πληροφορίες μαθήματος
 - **Μάθημα**: Λειτουργικά Συστήματα 1
