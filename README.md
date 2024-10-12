@@ -8,8 +8,8 @@ For the detailed Documentation, click the link:
 ## Course Information
 - **Course**: Operating Systems 1
 - **Semester**: 3
-- **Program**: [UNIWA](https://www.uniwa.gr/)
-- **Department**: [Information and Computer Engineering](https://ice.uniwa.gr/)
+- **Program Study**: [UNIWA](https://www.uniwa.gr/)
+- **Department**: [Informatics and Computer Engineering](https://ice.uniwa.gr/)
 - **Lab Instructor**: Pentaris Georgios
 
 ## Student Information
@@ -43,9 +43,6 @@ git clone https://github.com/Operating-Systems-1/Linux-Commands.git
 cd Linux-Commands
 ```
 
-
-
-
 ![Alt text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDEfyLHeZtHJ19qeRv2ac_QSYngEx32h-U7g&s)
 
 # Εντολές Linux
@@ -62,7 +59,7 @@ cd Linux-Commands
 
 ## Στοιχεία φοιτητή
 - **Όνομα**: Αθανασίου Βασίλειος Ευάγγελος
-- **Αριθμός φοιτητή**: ice19390005
+- **Αριθμός Μητρώου**: 19390005
 - **Κατάσταση**: Προπτυχιακές σπουδές
 
 ## Τίτλος ανάθεσης
