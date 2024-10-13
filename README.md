@@ -13,7 +13,7 @@ For the detailed Documentation, click the link:
 - **Semester**: 3
 - **Program Study**: [UNIWA](https://www.uniwa.gr/)
 - **Department**: [Informatics and Computer Engineering](https://ice.uniwa.gr/)
-- **Lab Instructor**: Pentaris Georgios
+- **Lab Instructor**: [Pentaris Georgios](https://ice.uniwa.gr/academic_sc_ho/)
 - **Academic Season**: 2021-2022
 
 ## Student Information
@@ -62,7 +62,7 @@ git clone https://github.com/Operating-Systems-1/Linux-Commands.git
 - **Εξάμηνο**: 3
 - **Πρόγραμμα Σπουδών**: [ΠΑΔΑ](https://www.uniwa.gr/)
 - **Τμήμα**: [Μηχανικών Πληροφορικής και Υπολογιστών](https://ice.uniwa.gr/)
-- **Διδάσκων εργαστηρίου**: Πεντάρης Γεώργιος
+- **Διδάσκων εργαστηρίου**: [Πεντάρης Γεώργιος](https://ice.uniwa.gr/academic_sc_ho/)
 - **Ακαδημαική Χρονιά**: 2021-2022
 
 ## Στοιχεία φοιτητή
